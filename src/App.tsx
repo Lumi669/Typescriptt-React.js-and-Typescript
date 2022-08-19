@@ -4,7 +4,7 @@ import TodoList from "./components/TodoList";
 import NewTodo from "./components/NewTodo";
 
 const App: React.FC = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<{ id: string; text: string }[]>([]);
   // const todos = [{ id: "t1", text: "Finish the course..." }];
 
   const todoAddHandler = (text: string) => {
