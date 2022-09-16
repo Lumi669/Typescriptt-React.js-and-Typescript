@@ -10,8 +10,11 @@ const App: React.FC = () => {
 
   const todoAddHandler = (text: string) => {
     console.log("text = ", text);
+
+    // not good way to update todos
     // setTodos([...todos, { id: Math.random().toString(), text: text }]);
 
+    // here, prevTodos can be any other words
     setTodos((prevTodos) => [
       ...prevTodos,
       { id: Math.random().toString(), text: text },
