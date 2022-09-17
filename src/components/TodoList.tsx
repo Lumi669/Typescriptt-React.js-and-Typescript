@@ -2,7 +2,7 @@ import React from "react";
 
 interface TodoListProps {
   items: { id: string; text: string }[];
-  onDeleteTodo: (id: string) => void;
+  onDeleteTodo: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const TodoList: React.FC<TodoListProps> = (props) => {
@@ -11,7 +11,7 @@ const TodoList: React.FC<TodoListProps> = (props) => {
       {props.items.map((item) => (
         <li key={item.id}>
           <span>{item.text}</span>
-          <button onClick={props.onDeleteTodo.bind(null, item.id)}>
+          <button id={item.id} onClick={props.onDeleteTodo}>
             Delete
           </button>
         </li>
