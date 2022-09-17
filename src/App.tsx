@@ -6,6 +6,7 @@ import { Todo } from "../todo.model";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  // const todos = [{ id: "t1", text: "Finish the course..." }];
 
   const todoAddHandler = (text: string) => {
     console.log("text = ", text);
@@ -20,11 +21,7 @@ const App: React.FC = () => {
     ]);
   };
 
-  const todoDeleteHandler = (e: React.MouseEvent) => {
-    // must add "as HTMLButtonElement", otherwise error !
-    const el = e.target as HTMLButtonElement;
-    const id = el.id;
-
+  const todoDeleteHandler = (id: string) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
